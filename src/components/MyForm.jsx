@@ -3,6 +3,7 @@ import { Plus } from '../utils/icon'
 import CustomInput from '../common/CustomInput'
 
 const MyForm = () => {
+  const [files, setFiles] = useState([]);
   const [formValue, setFormValue] = useState({
     standort: "",
     titel: "",
@@ -29,7 +30,6 @@ const MyForm = () => {
     setFormValue({ ...formValue, [id]: value });
   };
 
-  const [files, setFiles] = useState([]);
   function handleOnChange(e) {
     const newFiles = Array.from(e.target.files).map(file => URL.createObjectURL(file));
     setFiles(prevFiles => [...prevFiles, ...newFiles]);
@@ -41,7 +41,7 @@ const MyForm = () => {
         <p className='font-light text-xl max-sm:text-lg leading-[30px] text-neutral-500 text-center'>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         <div className='flex max-w-[763px] overflow-x-auto mx-auto items-center bg-white py-[7.34px] px-4 gap-4 rounded-[30px] border-[0.5px] border-dashed border-lightGray mt-5'>
           {files.map((file, index) => (
-            <img key={index} src={file} className={`h-24 rounded-[13px] object-cover w-24`} />
+            <img key={index} src={file} className={`h-24 rounded-[13px] object-cover w-24`} alt='concert' />
           ))}
           <input type="file" multiple onChange={handleOnChange} className='hidden' />
           <button onClick={() => document.querySelector('input[type="file"]').click()} type='button' className='flex py-[30px] px-[38px] rounded-[13px] border-[0.5px] border-dashed border-lightGray'><Plus /></button>
