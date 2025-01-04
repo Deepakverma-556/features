@@ -5,13 +5,13 @@ const MyFunction = () => {
   function addNumber(a, b) {
     return a + b
   }
-  
+
   var j = 2;
   const myTable = () => {
-    let table = [];
+    let customTable = [];
     for (let i = 1; i <= 10; i++) {
-      table.push(<p key={i}>{`${j} * ${i} = ${j * i}`}</p>);
-    } return table;
+      customTable.push(<p key={i}>{`${j} * ${i} = ${j * i}`}</p>);
+    } return customTable;
   }
   return (
     <div className='min-h-screen py-[60px] flex items-center flex-col px-4 justify-center'>
