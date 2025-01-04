@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import { STAR } from '../utils/helper';
 
 const MyFunction = () => {
   function addNumber(a, b) {
@@ -22,7 +21,7 @@ const MyFunction = () => {
       for (let j = 0; j < 5; j++) {
         obj += '*'
       }
-      stars.push(obj.trim())
+      stars.push(obj)
     }
     setName(stars)
   }, [])
